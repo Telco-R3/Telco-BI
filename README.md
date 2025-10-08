@@ -13,7 +13,7 @@ Customer-Churn-Analysis/
 ├── data/
 │   ├── data_set/              ← Raw Data
 │   ├── docs/          ← Documentation
-│   ├── scripts/          ← Data WareHouse
+│   ├── scripts/          ← Data Warehouse
 │
 ├── reports/
 │   ├── Telco_Churn_Dashboard.pbix
@@ -50,9 +50,9 @@ The project follows the **Medallion Architecture** — a layered data design pat
 - **Silver Layer:** Cleaned and transformed data used for analysis.  
 - **Gold Layer:** Aggregated and business-ready data used in the Power BI dashboards.
 
-![Data Architecture](data/docs/data_architecturee.png)
-
-
+![Data Architecture](https://github.com/Telco-R3/Telco-BI/blob/3b772f1147c653d022d5a474399ddc36662c5bdd/Customer-Churn-Analysis/data/docs/data_architecturee.png)
+![Data Architecture](https://github.com/Telco-R3/Telco-BI/blob/3b772f1147c653d022d5a474399ddc36662c5bdd/Customer-Churn-Analysis/data/docs/data_model.drawio.png)
+![Data Architecture](https://github.com/Telco-R3/Telco-BI/blob/3b772f1147c653d022d5a474399ddc36662c5bdd/Customer-Churn-Analysis/data/docs/Data_flow_diagram.drawio.png)
 ---
 
 ## 📊 Dashboard Pages Overview
@@ -105,12 +105,9 @@ Shows customer distribution by gender, seniority, dependents, and geographic loc
 ---
 
 ✅ **Tip:**  
-احرصي إن الصورة `data_architecture.png` تكون موجودة في فولدر  
 `Visuals/` بنفس الاسم بالضبط علشان تظهر على GitHub.
 
 ---
-
-هل تحبي أظبطلك نفس المحتوى ده في ملف `README.md` جاهز كود عشان تنسخيه مباشرة؟
 
 
 | Dashboard Page | Preview |
