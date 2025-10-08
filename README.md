@@ -6,6 +6,37 @@ This project analyzes customer churn behavior to identify key drivers behind cus
 
 Data was modeled into a Star Schema and visualized through an interactive Power BI Dashboard containing six analytical pages.
 
+## Project Structure
+```
+Customer-Churn-Analysis/
+│
+├── data/
+│   ├── data_set/              ← Raw Data
+│   ├── docs/          ← Documentation
+│   ├── scripts/          ← Data WareHouse
+│
+├── reports/
+│   ├── Telco_Churn_Dashboard.pbix
+│   ├── Presentation.pptx
+│   ├── Business Scenario.pdf
+│
+├── scripts/
+│   ├── DAX_measures.txt
+│   ├── data_preparation_notebook.ipynb
+│
+├── visuals/
+|   ├── bg.zip
+│   ├── churn_analysis_page.png
+│   ├── customer_demographics_page.png
+│   ├── customer_segmentation_page.png 
+│   ├── home_page.png
+│   ├── icons.zip
+│   ├── overview_page.png 
+│   ├── service_usage_page.png
+│
+└── README.md
+```
+
 Customer-Churn-Analysis/
 │
 ├── data/
