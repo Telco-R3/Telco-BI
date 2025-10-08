@@ -219,3 +219,14 @@ What percentage of total customers are classified as “Mid Value”?
 How many total services are being used across all customers?
 
     total services = count(dim_services[ServiceKey])
+
+
+📊 Analytical KPIs Summary
+
+This project’s DAX measures focus on analyzing customer churn, revenue loss, and behavioral patterns.
+
+- Retention Metrics: Churn Rate %, Active Customers, Average Tenure
+- Revenue Metrics: MRR, Total Revenue, Churned Revenue, ARPU
+- Customer Value Segmentation:** Average CLTV, High/Low/Mid Value Customers %
+- Demographics & Services: `Partner %, Dependents %, Senior Citizen %, Internet Service %, Tech Support %, Streaming %
+- Goal: Provide actionable insights for reducing churn and maximizing customer lifetime value.
