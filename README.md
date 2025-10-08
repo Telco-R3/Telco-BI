@@ -50,7 +50,8 @@ The project follows the **Medallion Architecture** — a layered data design pat
 - **Silver Layer:** Cleaned and transformed data used for analysis.  
 - **Gold Layer:** Aggregated and business-ready data used in the Power BI dashboards.
 
-![Data Architecture](Telco-BI\Customer-Churn-Analysis\data\docs\data_architecturee.png)
+![Data Architecture](data/docs/data_architecturee.png)
+
 
 ---
 
