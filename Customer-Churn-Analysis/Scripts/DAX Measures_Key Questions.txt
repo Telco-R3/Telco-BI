@@ -1,0 +1,221 @@
+DAX Measures and Their Analytical Questions:
+
+1.	Average CLTV (Customer Lifetime Value)
+What is the average lifetime value of a customer based on their monthly charges and tenure?
+
+    #Average CLTV (from Monthly*Tenure) = 
+    AVERAGEX(
+        VALUES( 'dim_customer'[CustomerID] ),
+        CALCULATE(
+            SUMX(
+                'fact_subscriptions',
+                'fact_subscriptions'[MonthlyCharges] * 'fact_subscriptions'[TenureMonths]
+            )
+        )
+    )
+
+
+2.	Active Customers
+How many customers are currently active and have not churned?
+
+    Active Customers = 
+    CALCULATE(
+        DISTINCTCOUNT('dim_customer'[CustomerID]),
+        'fact_subscriptions'[ChurnFlag] = "no"
+    )
+
+
+3.	Average Revenue per User (ARPU)
+What is the average revenue generated per active customer?
+
+    ARPU = 
+    DIVIDE(
+        SUM('fact_subscriptions'[TotalCharges]),
+        [1#Total Customers]
+    )
+
+
+4.	Churn Rate %
+What percentage of total customers have churned?
+
+    Churn Rate % = 
+    DIVIDE(
+        CALCULATE(
+            DISTINCTCOUNT('dim_customer'[CustomerID]),
+            'fact_subscriptions'[ChurnFlag] = "yes"
+        ),
+        [1#Total Customers]
+    )
+
+
+5.	Churned Customers
+How many customers have churned (i.e., stopped using the service)?
+
+    Churned Customers = 
+    CALCULATE(
+        DISTINCTCOUNT('dim_customer'[CustomerID]),
+        'fact_subscriptions'[ChurnFlag] = "yes"
+    )
+
+
+6.	Monthly Recurring Revenue (MRR)
+What is the total recurring monthly revenue generated from all active customers?
+
+    MRR = SUM('fact_subscriptions'[MonthlyCharges])
+
+
+7.	Total Customers
+How many unique customers does the company have in total?
+
+    Total Customers = DISTINCTCOUNT('dim_customer'[CustomerID])
+
+
+8.	Average Tenure
+What is the average duration (in months) that customers stay subscribed?
+
+    Average Tenure = 
+    AVERAGE ( 'fact_subscriptions'[TenureMonths] )
+
+
+9.	Churned Revenue
+How much total revenue has been lost from churned customers?
+
+    Churned Revenue = 
+    CALCULATE(
+        SUM('fact_subscriptions'[TotalCharges]),
+        'fact_subscriptions'[ChurnFlag] = "Yes"
+    )
+
+
+10.	Total Revenue
+What is the total revenue earned from all customers?
+
+    Total Revenue = 
+    SUM ( 'fact_subscriptions'[TotalCharges] )
+
+
+11.	Dependents %
+What percentage of customers have dependents?
+
+    Dependents % = 
+    DIVIDE (
+        COUNTROWS ( FILTER ( 'dim_customer', 'dim_customer'[Dependents]= "Yes" ) ),
+        [1#Total Customers],
+        0)
+
+
+12.	Partner %
+What percentage of active customers have partners?
+
+    Partner % = 
+    DIVIDE (
+        COUNTROWS ( FILTER ( 'dim_customer', 'dim_customer'[Partner] = "Yes" ) ),
+        [1#Active Customers],
+        0)
+
+
+13.	Senior Citizen %
+What percentage of total customers are senior citizens?
+
+    Senior Citizen % = 
+    DIVIDE (
+        COUNTROWS ( FILTER ( 'dim_customer', 'dim_customer'[SeniorCitizen] = "yes" ) ),
+        [1#Total Customers],
+        "no"
+    )
+
+
+14.	Internet Service %
+What percentage of total services include Internet service?
+
+    Internet Service % = 
+    DIVIDE (
+        COUNTROWS ( FILTER ( 'dim_services', 'dim_services'[InternetService] <> "No" ) ),
+        [5#total services],
+        0
+    )
+
+
+15.	Online Security %
+What percentage of customers subscribe to online security services?
+
+    Online Security % = 
+    DIVIDE (
+        COUNTROWS ( FILTER ( 'dim_services', 'dim_services'[OnlineSecurity] = "Yes" ) ),
+        [5#total services],
+        0
+    )
+
+
+16.	Streaming %
+What percentage of customers use streaming services (TV or Movies)?
+
+    Streaming % = 
+    VAR CustomersWithStreaming =
+        DISTINCT (
+            SELECTCOLUMNS (
+                FILTER (
+                    'dim_services',
+                    'dim_services'[StreamingTV] = "Yes"
+                    || 'dim_services'[StreamingMovies] = "Yes"
+                ),
+                "CustomerID", 'dim_services'[ServiceKey]
+            )
+        )
+    RETURN
+    DIVIDE (
+        COUNTROWS(CustomersWithStreaming),
+        [5#total services],
+        0
+    )
+
+
+17.	Tech Support %
+What percentage of customers have opted for technical support services?
+
+
+    Tech Support % = 
+    DIVIDE (
+        COUNTROWS ( FILTER ( 'dim_services', 'dim_services'[TechSupport] = "Yes" ) ),
+        [5#total services],
+        0
+    )
+
+
+18.	High Value Customers %
+What percentage of total customers are classified as “High Value”?
+
+    High Value Customers % = 
+    DIVIDE (
+        COUNTROWS ( FILTER ( 'fact_subscriptions', 'fact_subscriptions'[Customer Segment] = "High Value" ) ),
+        [1#Total Customers],
+        0
+    )
+
+
+19.	Low Value Customers %
+What percentage of total customers are classified as “Low Value”?
+
+    Low Value Customers % = 
+    DIVIDE (
+        COUNTROWS ( FILTER ( 'fact_subscriptions', 'fact_subscriptions'[Customer Segment] = "Low Value" ) ),
+        [1#Total Customers],
+        0
+    )
+
+
+20.	Mid Value Customers %
+What percentage of total customers are classified as “Mid Value”?
+
+    Mid Value Customers % = 
+    DIVIDE (
+        COUNTROWS ( FILTER ( 'fact_subscriptions', 'fact_subscriptions'[Customer Segment] = "Mid Value" ) ),
+        [1#Total Customers],
+        0
+    )
+
+
+21.	Total Services
+How many total services are being used across all customers?
+
+    total services = count(dim_services[ServiceKey])
