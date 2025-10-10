@@ -33,14 +33,14 @@ Customer-Churn-Analysis/
 │   ├── Final project presentation.pdf     # Final presentation slides reports
 │
 ├── visuals/
-|   ├── bg.zip
 │   ├── churn_analysis_page.png
 │   ├── customer_demographics_page.png
 │   ├── customer_segmentation_page.png 
 │   ├── home_page.png
-│   ├── icons.zip
 │   ├── overview_page.png 
 │   ├── service_usage_page.png
+|   ├── bg/
+│   ├── icons/
 │
 └── README.md
 ```
