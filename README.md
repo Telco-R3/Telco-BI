@@ -91,7 +91,7 @@ Additional insights include:
 
 ---
 
-### 📉 Churn Analysis
+### 📉 Churn Analysis Page
 
 This page provides an in-depth overview of churn performance and its financial impact on the business.  
 It focuses on identifying churn trends, revenue loss, and customer behavior.
@@ -131,7 +131,7 @@ This page segments customers based on their overall value and behavior to suppor
 
 ---
 
-### ⚙️ Service Usage
+### ⚙️ Service Usage Page
 
 This page focuses on analyzing **service usage patterns** and their correlation with customer churn.  
 It presents key metrics such as:
