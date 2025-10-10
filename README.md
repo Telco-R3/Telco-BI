@@ -229,4 +229,4 @@ The project was developed using the following tools and technologies:
 - Muhannad Mahfouz Muhammad  
 
 **Supervisor:** Eng. Abdelrahman Ashour  
-**Program:** Digital Egypt Pioneers Initiative (DEPI) — *Data Analytics - Microsofr Power BI Specialest Track*
+**Program:** Digital Egypt Pioneers Initiative (DEPI) — *Data Analytics - Microsoft Power BI Specialest Track*
