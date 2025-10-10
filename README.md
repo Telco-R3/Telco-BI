@@ -59,16 +59,21 @@ The project follows the **Medallion Architecture** — a layered data design pat
 ![Data Architecture](https://github.com/Telco-R3/Telco-BI/blob/3b772f1147c653d022d5a474399ddc36662c5bdd/Customer-Churn-Analysis/data/docs/data_architecturee.png)
 ![Data Architecture](https://github.com/Telco-R3/Telco-BI/blob/3b772f1147c653d022d5a474399ddc36662c5bdd/Customer-Churn-Analysis/data/docs/data_model.drawio.png)
 ![Data Architecture](https://github.com/Telco-R3/Telco-BI/blob/3b772f1147c653d022d5a474399ddc36662c5bdd/Customer-Churn-Analysis/data/docs/Data_flow_diagram.drawio.png)
+
 ---
 
 ## 📊 Dashboard Pages Overview
+
+---
 
 ### 🏠 Home Page
 
 The **Home Page** serves as the dashboard's main entry point and sets the visual tone for the entire report.  
 
 ![Home Page](https://github.com/Telco-R3/Telco-BI/blob/f07707c644c6be8c4a871ffcea43c4223b68db16/Customer-Churn-Analysis/Visuals/home_page.png)
+
 --- 
+
 ### 📋 Overview Page
 This page provides a comprehensive summary of the company’s performance and customer churn metrics.  
 It highlights key business indicators such as:
@@ -85,6 +90,7 @@ Additional insights include:
 ![Overview Page](https://github.com/Telco-R3/Telco-BI/blob/0778fc94e7361e08e3c9e9904a5971c5de84db6a/Customer-Churn-Analysis/Visuals/overview_page.png)
 
 ---
+
 ### 📉 Churn Analysis
 
 This page provides an in-depth overview of churn performance and its financial impact on the business.  
@@ -105,6 +111,7 @@ It focuses on identifying churn trends, revenue loss, and customer behavior.
 ![Churn Analysis Page](https://github.com/Telco-R3/Telco-BI/blob/0778fc94e7361e08e3c9e9904a5971c5de84db6a/Customer-Churn-Analysis/Visuals/churn_analysis_page.png)
 
 ---
+
 ### 👥 Customer Segmentation Page
 
 This page segments customers based on their overall value and behavior to support targeted retention and marketing strategies.
@@ -121,7 +128,9 @@ This page segments customers based on their overall value and behavior to suppor
 - The **Churn Rate by Segment** chart identifies where to focus efforts to reduce attrition and increase profitability.  
 
 ![Customer Segmentation Page](https://github.com/Telco-R3/Telco-BI/blob/0778fc94e7361e08e3c9e9904a5971c5de84db6a/Customer-Churn-Analysis/Visuals/customer_segmentation_page.png)
+
 ---
+
 ### ⚙️ Service Usage
 
 This page focuses on analyzing **service usage patterns** and their correlation with customer churn.  
@@ -159,6 +168,8 @@ This section explores the demographic composition of telecom customers to unders
 
 ![Customer Demographics Page](https://github.com/Telco-R3/Telco-BI/blob/7dadb7ab704c69d1950c41bdcb71265483b1563c/Customer-Churn-Analysis/Visuals/customer_demographics_page.png)
 
+---
+
 ## 🧠 Key Insights
 - Fiber users have the **highest churn rate** due to pricing issues.  
 - Customers with **monthly contracts** are more likely to churn.  
@@ -175,7 +186,9 @@ This project’s DAX measures focus on analyzing customer churn, revenue loss, a
 - **Customer Value Segmentation:** `Average CLTV`, `High/Low/Mid Value Customers %`
 - **Demographics & Services:** `Partner %`, `Dependents %`, `Senior Citizen %`, `Internet Service %`, `Tech Support %`, `Streaming %`
 - **Goal:** Provide actionable insights for **reducing churn** and **maximizing customer lifetime value**.
+  
 ---
+
 ## 👩‍💻 Project Team
 
 This project was developed as part of the **Digital Egypt Pioneers Initiative (DEPI)** under the **Data Analytics Track**,  
@@ -191,18 +204,18 @@ supervised by **Eng. Abdelrahman Ashour**.
 
 ---
 
-
-## 🛠️ Tools & Technologies  
+## ⚙️ Tools & Technologies Used
 
 The project was developed using the following tools and technologies:
 
-| Tool | Purpose |
-|------|----------|
-| **Microsoft SQL Server Management Studio (SSMS)** | Data extraction, cleaning, and transformation (ETL) |
-| **Power BI** | Data modeling, DAX calculations, and dashboard visualization |
-| **Figma** | Dashboard layout design and user interface prototyping |
-| **Microsoft PowerPoint** | Presentation of findings and business recommendations |
-| **Microsoft Word** | Documentation and business scenario report |
+| Category | Tool | Purpose |
+|-----------|------|----------|
+| **Data Processing** | SQL Server | Data cleaning, transformation, and querying |
+| **Data Modeling** | SQL DDL, ERD | Database schema and relationships |
+| **BI & Visualization** | Power BI | Dashboard creation and data visualization |
+| **Documentation** | Google Docs, PowerPoint | Diagrams, DAX explanation, and presentation |
+| **Version Control** | Git & GitHub | Project hosting, versioning, and collaboration |
+| **Design** | Figma |Dashboard layout design and user interface prototyping |
 
 ---
 
@@ -214,4 +227,4 @@ The project was developed using the following tools and technologies:
 - Muhannad Mahfouz Muhammad  
 
 **Supervisor:** Eng. Abdelrahman Ashour  
-**Program:** Digital Egypt Pioneers Initiative (DEPI) — *Data Analytics Track*
+**Program:** Digital Egypt Pioneers Initiative (DEPI) — *Data Analytics - Microsofr Power BI Specialest Track*
