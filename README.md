@@ -65,31 +65,31 @@ Teleco Customer Churn Analysis dashboards.
 ---
 Summarizes the company’s customer base and churn performance with high-level KPIs, churn rate trends, and financial impact.
 ---
-![Overview Page](https://github.com/Telco-R3/Telco-BI/blob/f07707c644c6be8c4a871ffcea43c4223b68db16/Customer-Churn-Analysis/Visuals/overview_page.png)
+![Overview Page](https://github.com/Telco-R3/Telco-BI/blob/0778fc94e7361e08e3c9e9904a5971c5de84db6a/Customer-Churn-Analysis/Visuals/overview_page.png)
 
 ### 📉 Churn Analysis
 ---
 Visualizes churn distribution, key churn drivers, and churn trends across customer types.
 ---
-![Churn Analysis Page](https://github.com/Telco-R3/Telco-BI/blob/f07707c644c6be8c4a871ffcea43c4223b68db16/Customer-Churn-Analysis/Visuals/churn_analysis_page.png)
+![Churn Analysis Page](https://github.com/Telco-R3/Telco-BI/blob/0778fc94e7361e08e3c9e9904a5971c5de84db6a/Customer-Churn-Analysis/Visuals/churn_analysis_page.png)
 
 ### 👥 Customer Segmentation
 ---
 Group customers into segments (High, Mid, Low Value) based on CLTV and behavior.
 ---
-![Customer Segmentation Page](https://github.com/Telco-R3/Telco-BI/blob/f07707c644c6be8c4a871ffcea43c4223b68db16/Customer-Churn-Analysis/Visuals/customer_segmentation_page.png)
+![Customer Segmentation Page](https://github.com/Telco-R3/Telco-BI/blob/0778fc94e7361e08e3c9e9904a5971c5de84db6a/Customer-Churn-Analysis/Visuals/customer_segmentation_page.png)
 
 ### ⚙️ Service Usage
 ---
 Analyzes service types, internet usage, and support correlations with churn rate.
 ---
-![Service Usage Page](https://github.com/Telco-R3/Telco-BI/blob/f07707c644c6be8c4a871ffcea43c4223b68db16/Customer-Churn-Analysis/Visuals/services_usage_page.png)
+![Service Usage Page](https://github.com/Telco-R3/Telco-BI/blob/0778fc94e7361e08e3c9e9904a5971c5de84db6a/Customer-Churn-Analysis/Visuals/churn_analysis_page.png)
 
 ### 🌍 Customer Demographics
 ---
 Shows customer distribution by gender, seniority, dependents, and geographic location.
 ---
-![Customer Demographics Page](https://github.com/Telco-R3/Telco-BI/blob/f07707c644c6be8c4a871ffcea43c4223b68db16/Customer-Churn-Analysis/Visuals/customer_demographics_page.png)
+![Customer Demographics Page](https://github.com/Telco-R3/Telco-BI/blob/0778fc94e7361e08e3c9e9904a5971c5de84db6a/Customer-Churn-Analysis/Visuals/customer_segmentation_page.png)
 
 ---
 
