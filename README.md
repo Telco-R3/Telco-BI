@@ -83,13 +83,13 @@ Group customers into segments (High, Mid, Low Value) based on CLTV and behavior.
 ---
 Analyzes service types, internet usage, and support correlations with churn rate.
 ---
-![Service Usage Page](https://github.com/Telco-R3/Telco-BI/blob/0778fc94e7361e08e3c9e9904a5971c5de84db6a/Customer-Churn-Analysis/Visuals/churn_analysis_page.png)
+![Service Usage Page](https://github.com/Telco-R3/Telco-BI/blob/0778fc94e7361e08e3c9e9904a5971c5de84db6a/Customer-Churn-Analysis/Visuals/Service_Usage_Page.png)
 
 ### 🌍 Customer Demographics
 ---
 Shows customer distribution by gender, seniority, dependents, and geographic location.
 ---
-![Customer Demographics Page](https://github.com/Telco-R3/Telco-BI/blob/0778fc94e7361e08e3c9e9904a5971c5de84db6a/Customer-Churn-Analysis/Visuals/customer_segmentation_page.png)
+![Customer Demographics Page](https://github.com/Telco-R3/Telco-BI/blob/7dadb7ab704c69d1950c41bdcb71265483b1563c/Customer-Churn-Analysis/Visuals/customer_demographics_page.png)
 
 ---
 
