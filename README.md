@@ -13,7 +13,7 @@ Customer-Churn-Analysis/
 ├── data/
 │   ├── data_set/          
 │   │   │   └── Telco customer churn dataset.csv      # Source datasets used for analysis
-│   ├── docs/               # Documentations about the data warehouse
+│   ├── Data Warehouse Documentation/                 # Documentations about the data warehouse
 │   ├── scripts/
 │   │   ├── ddl/                           # Contains SQL scripts for data warehouse schema definition
 │   │   │   └── DDL_Telecom_churn_whare_house.sql
