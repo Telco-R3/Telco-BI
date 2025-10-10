@@ -11,10 +11,19 @@ Data was modeled into a Star Schema and visualized through an interactive Power 
 Customer-Churn-Analysis/
 │
 ├── data/
-│   ├── data_set/              ← Raw Data
-│   ├── docs/          ← Documentation
-│   ├── scripts/          ← Data Warehouse
-│
+│   ├── data_set/           # Source datasets used for analysis
+│   ├── docs/               # Documentation for the data warehouse
+│   ├── scripts/
+│   │   ├── ddl/                           # Contains SQL scripts for data warehouse schema definition
+│   │   │   └── DDL_Telecom_churn_whare_house.sql
+│   │   │
+│   │   ├── etl/                           # Contains transformation scripts after data modeling
+│   │   │   └── the Same data After modeling.sql
+│   │   │
+│   │   ├── bronze/                        # Raw data layer
+│   │   ├── silver/                        # Cleaned and transformed data
+│   │   └── gold/                          # Final analytical data
+|
 ├── reports/
 │   ├── Telco_Churn_Dashboard.pbix
 │   ├── Presentation.pptx
@@ -60,8 +69,8 @@ The project follows the **Medallion Architecture** — a layered data design pat
 The **Home Page** serves as the dashboard's main entry point and sets the visual tone for the entire report.  
 
 ![Home Page](https://github.com/Telco-R3/Telco-BI/blob/f07707c644c6be8c4a871ffcea43c4223b68db16/Customer-Churn-Analysis/Visuals/home_page.png)
-
-### 1. Overview Page
+--- 
+### 📋 Overview Page
 This page provides a comprehensive summary of the company’s performance and customer churn metrics.  
 It highlights key business indicators such as:
 - **Total Customers:** 7,043  
@@ -76,6 +85,7 @@ Additional insights include:
 
 ![Overview Page](https://github.com/Telco-R3/Telco-BI/blob/0778fc94e7361e08e3c9e9904a5971c5de84db6a/Customer-Churn-Analysis/Visuals/overview_page.png)
 
+---
 ### 📉 Churn Analysis
 
 This page provides an in-depth overview of churn performance and its financial impact on the business.  
@@ -114,9 +124,7 @@ This page segments customers based on their overall value and behavior to suppor
 ![Customer Segmentation Page](https://github.com/Telco-R3/Telco-BI/blob/0778fc94e7361e08e3c9e9904a5971c5de84db6a/Customer-Churn-Analysis/Visuals/customer_segmentation_page.png)
 ---
 ### ⚙️ Service Usage
----
 
-### 2. Services Usage Page
 This page focuses on analyzing **service usage patterns** and their correlation with customer churn.  
 It presents key metrics such as:
 - **Overall Churn Rate:** 27%  
@@ -181,6 +189,21 @@ supervised by **Eng. Abdelrahman Ashour**.
 | **Tasneem Shaaban Attia** | Presenter | Project presentation, storytelling, and communication of findings |
 | **Ibrahim Saeed Mohamed** | BI Developer | Dashboard implementation and Power BI visualizations |
 | **Muhannad Mahfouz Muhammad** | UI Designer | Dashboard layout, color theme, and visual consistency |
+
+---
+
+
+## 🛠️ Tools & Technologies  
+
+The project was developed using the following tools and technologies:
+
+| Tool | Purpose |
+|------|----------|
+| **Microsoft SQL Server Management Studio (SSMS)** | Data extraction, cleaning, and transformation (ETL) |
+| **Power BI** | Data modeling, DAX calculations, and dashboard visualization |
+| **Figma** | Dashboard layout design and user interface prototyping |
+| **Microsoft PowerPoint** | Presentation of findings and business recommendations |
+| **Microsoft Word** | Documentation and business scenario report |
 
 ---
 
