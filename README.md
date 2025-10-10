@@ -1,7 +1,7 @@
 ## 🧩 Customer Churn Analysis Project
 Power BI | Data Analytics | Customer Insights
 
-🚀 Project Overview:
+**Project Overview**:
 This project analyzes customer churn behavior to identify key drivers behind customer attrition and uncover actionable insights to help the company reduce churn rate, improve customer experience, and increase revenue retention.
 
 Data was modeled into a Star Schema and visualized through an interactive Power BI Dashboard containing six analytical pages.
@@ -11,8 +11,9 @@ Data was modeled into a Star Schema and visualized through an interactive Power 
 Customer-Churn-Analysis/
 │
 ├── data/
-│   ├── data_set/           # Source datasets used for analysis
-│   ├── docs/               # Documentation for the data warehouse
+│   ├── data_set/          
+│   │   │   └── Telco customer churn dataset.csv      # Source datasets used for analysis
+│   ├── docs/               # Documentations about the data warehouse
 │   ├── scripts/
 │   │   ├── ddl/                           # Contains SQL scripts for data warehouse schema definition
 │   │   │   └── DDL_Telecom_churn_whare_house.sql
