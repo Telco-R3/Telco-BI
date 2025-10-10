@@ -24,14 +24,13 @@ Customer-Churn-Analysis/
 │   │   ├── silver/                        # Cleaned and transformed data
 │   │   └── gold/                          # Final analytical data
 |
-├── reports/
-│   ├── Telco_Churn_Dashboard.pbix
-│   ├── Presentation.pptx
-│   ├── Business Scenario.pdf
+├── Analysis/
+│   ├── Telco_Churn_Dashboard.pbix         # Power BI dashboard files
+│   ├── DAX & Questions.pdf                # DAX measures and analytical questions
+│   ├── Business Scenario.pdf              # Business understanding and objectives
 │
-├── scripts/
-│   ├── DAX_measures.txt
-│   ├── data_preparation_notebook.ipynb
+├── Presentation/
+│   ├── Final project presentation.pdf     # Final presentation slides reports
 │
 ├── visuals/
 |   ├── bg.zip
