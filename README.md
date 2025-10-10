@@ -210,12 +210,11 @@ The project was developed using the following tools and technologies:
 
 | Category | Tool | Purpose |
 |-----------|------|----------|
-| **Data Processing** | SQL Server | Data cleaning, transformation, and querying |
-| **Data Modeling** | SQL DDL, ERD | Database schema and relationships |
+| **Data Processing & Modeling** | MS SQL Server | Data cleaning, transformation, and querying. Database schema and relationships|
 | **BI & Visualization** | Power BI | Dashboard creation and data visualization |
 | **Documentation** | Google Docs, PowerPoint | Diagrams, DAX explanation, and presentation |
-| **Version Control** | Git & GitHub | Project hosting, versioning, and collaboration |
 | **Design** | Figma |Dashboard layout design and user interface prototyping |
+| **Version Control** | Git & GitHub | Project hosting, versioning, and collaboration |
 
 ---
 
