@@ -219,12 +219,5 @@ The project was developed using the following tools and technologies:
 
 ---
 
-### 🧩 Team Members
-- Esraa Soliman Mubarak  
-- Ahmed Anwer Fath  
-- Tasneem Shaaban Attia  
-- Ibrahim Saeed Mohamed  
-- Muhannad Mahfouz Muhammad  
-
 **Supervisor:** Eng. Abdelrahman Ashour  
 **Program:** Digital Egypt Pioneers Initiative (DEPI) — *Data Analytics - Microsoft Power BI Specialest Track*
