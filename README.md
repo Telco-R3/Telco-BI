@@ -128,7 +128,7 @@ This page segments customers based on their overall value and behavior to suppor
 - Visual comparisons between **Customer Count** and **Total Revenue** reveal imbalances that highlight opportunities for customer retention.  
 - The **Churn Rate by Segment** chart identifies where to focus efforts to reduce attrition and increase profitability.  
 
-![Customer Segmentation Page](https://github.com/Telco-R3/Telco-BI/blob/0778fc94e7361e08e3c9e9904a5971c5de84db6a/Customer-Churn-Analysis/Visuals/customer_segmentation_page.png)
+![Customer Segmentation Page](https://github.com/Telco-R3/Telco-BI/blob/507da310821963bfd56f610181480f98737c8273/Customer-Churn-Analysis/Visuals/customer_segmentation_page)
 
 ---
 
