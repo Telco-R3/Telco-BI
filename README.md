@@ -109,7 +109,7 @@ It focuses on identifying churn trends, revenue loss, and customer behavior.
 - Top churn reasons include poor service experience and competitor offers with better value or device quality.  
 - A **Sankey diagram** visualizes churn flow across multiple dimensions such as **Contract Type**, **Payment Method**, **Gender**, and **City**, revealing which customer profiles are most prone to churn.
 
-![Churn Analysis Page](https://github.com/Telco-R3/Telco-BI/blob/0778fc94e7361e08e3c9e9904a5971c5de84db6a/Customer-Churn-Analysis/Visuals/churn_analysis_page.png)
+![Churn Analysis Page](https://github.com/Telco-R3/Telco-BI/blob/96087a8ba33179105fbc861be173310046050f67/Customer-Churn-Analysis/Visuals/ChurnAnalysis_Page)
 
 ---
 
