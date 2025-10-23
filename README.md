@@ -1,9 +1,13 @@
-## 🧩 Customer Churn Analysis Project
-Power BI | Data Analytics | Customer Insights
+# 🧩 Customer Churn Analysis Project
+**Power BI | Data Analytics | Customer Insights**
 
-**Project Overview**:
-This project analyzes customer churn behavior to identify key drivers behind customer attrition and uncover actionable insights to help the company reduce churn rate, improve customer experience, and increase revenue retention.
+---
 
+## Project Overview
+
+This project provides an in-depth analysis of **customer churn behavior** to identify the key drivers behind customer attrition and uncover actionable insights. The primary goal is to help the company **reduce the churn rate**, improve the customer experience, and increase revenue retention.
+
+The analysis is powered by a robust **Data Pipeline** engineered using the **Medallion Architecture**, resulting in a highly optimized Star Schema. The final insights are presented through an interactive and comprehensive **Power BI Dashboard** containing six dedicated analytical pages.
 Data was modeled into a Star Schema and visualized through an interactive Power BI Dashboard containing six analytical pages.
 
 ## Project Structure
@@ -63,7 +67,46 @@ The project follows the **Medallion Architecture** — a layered data design pat
 
 ---
 
-## 📊 Dashboard Pages Overview
+## 📊 Data Architecture and Data Model Deep Dive
+
+The project utilizes a dedicated Data Warehouse structured under the **Medallion Architecture** (Bronze, Silver, Gold layers) to ensure data quality, reliability, and governance throughout the entire analysis pipeline.
+
+### Medallion Layers Overview
+
+| Layer Name | Purpose and Role | Key Technologies/Actions |
+| :--- | :--- | :--- |
+| **Bronze Layer** | **Raw Data Ingestion:** Serves as the landing zone for the raw Telco dataset. Data is stored in its original format. | Initial data load. |
+| **Silver Layer** | **Cleaning and Standardization:** This critical layer performed data cleansing, standardization, and feature engineering (e.g., handling nulls, type conversion). | SQL/Power Query (ETL/ELT). |
+| **Gold Layer** | **Business-Ready Analysis:** The final, governed layer. Data is aggregated and structured into the **Star Schema** to support high-performance analytical queries in Power BI. | Star Schema Design (Fact and Dimension Tables). |
+
+### Gold Layer Output: Star Schema Components
+
+The final data model is built on the following key Fact and Dimension tables, created in the **Gold Layer**, with established **One-to-Many** relationships (as shown in the data model schema):
+
+| Table Name (Schema Role) | Description | Primary Key / Foreign Key | Key Attributes (Examples) |
+| :--- | :--- | :--- | :--- |
+| `fact_subscriptions` (**Fact Table**) | Contains transactional metrics, customer behavior, and the core churn metrics. | **FKs:** Links to Dimension Tables. | Monthly Charges, Total Charges, TenureMonths, **ChurnFlag**. |
+| `dim_customer` (**Dimension Table**) | Contains static customer demographics and contact information. | **PK:** CustomerID. | Partner, Dependents, SeniorCitizen, Gender. |
+| `dim_services` (**Dimension Table**) | Details the various value-added and core services subscribed to by customers. | **PK:** ServiceKey. | InternetService, OnlineSecurity, TechSupport, Streaming TV. |
+
+---
+
+## 🔬 Data Dictionary: Key Field Analysis
+
+This section details the analytical and technical role of the most critical fields, demonstrating how raw data translates into actionable analytical work:
+
+| Field Name | Source Table | Data Type (Power BI) | Analytical Role & DAX Usage Example |
+| :--- | :--- | :--- | :--- |
+| **ChurnFlag** | `fact_subscriptions` | Text (yes/no) | Core Churn Metric. Used in `CALCULATE` functions to define filtered contexts for **Churn Rate %** and **Churned Customers**. |
+| **Total Charges** | `fact_subscriptions` | Decimal Number | Basis for financial metrics, e.g., **Total Revenue** and **Churned Revenue**. *Technical Note: Required data cleaning in the Silver Layer to handle initial text/blank values for new customers.* |
+| **TenureMonths** | `fact_subscriptions` | Whole Number | Time dimension. Crucial for calculating **Average Tenure** and used in the complex **Average CLTV** formula. |
+| **OnlineSecurity** | `dim_services` | Text (Yes/No) | Key dimension for **Service Usage Analysis**. Used with `COUNTROWS(FILTER(...))` to calculate service adoption percentages (e.g., Online Security %). |
+
+---
+
+## 📊 Dashboard Pages Technical Deep Dive
+
+The Power BI dashboard relies on the structured **Star Schema** data model and leverages complex **DAX measures** to deliver high-impact insights.
 
 ---
 
@@ -76,17 +119,12 @@ The **Home Page** serves as the dashboard's main entry point and sets the visual
 --- 
 
 ### 📋 Overview Page
-This page provides a comprehensive summary of the company’s performance and customer churn metrics.  
-It highlights key business indicators such as:
-- **Total Customers:** 7,043  
-- **Monthly Revenue:** $456K  
-- **Active Customers:** 5,174  
-- **Churned Customers:** 1,869 (representing a **27% churn rate**)  
 
-Additional insights include:
-- **Customer Distribution by Contract Type:** The majority of customers have **month-to-month contracts**, which show the highest churn rate.  
-- **Customer Tenure Analysis:** Most churn occurs among customers with shorter tenures, especially within the first few months.  
-- **Top 10 Cities by Churn:** Identifies the regions with the highest customer loss, providing geographic insights for targeted retention strategies.  
+| Focus Area | Technical Implementation & Challenges |
+| :--- | :--- |
+| **KPI Calculations (DAX)** | Relied on measures like **Total Customers** (`DISTINCTCOUNT`) and **Active Customers** (using `CALCULATE` to apply `ChurnFlag = "no"` filter context). |
+| **Time Series Prep** | **Tenure Bucketing:** Implemented a Calculated Column or M-Query step to categorize `TenureMonths` for structured time-based analysis. |
+
 
 ![Overview Page](https://github.com/Telco-R3/Telco-BI/blob/0778fc94e7361e08e3c9e9904a5971c5de84db6a/Customer-Churn-Analysis/Visuals/overview_page.png)
 
@@ -94,20 +132,12 @@ Additional insights include:
 
 ### 📉 Churn Analysis Page
 
-This page provides an in-depth overview of churn performance and its financial impact on the business.  
-It focuses on identifying churn trends, revenue loss, and customer behavior.
+| Focus Area | Technical Implementation & Challenges |
+| :--- | :--- |
+| **Average CLTV (DAX)** | Implemented the most complex measure: **Average CLTV**. This required a row context transition using `AVERAGEX` over `CustomerID` combined with `CALCULATE` and `SUMX`. |
+| **Churned Revenue (DAX)** | Used a specific filter context: `Churned Revenue = CALCULATE(SUM('fact_subscriptions'[Total Charges]), 'fact_subscriptions'[ChurnFlag] = "Yes")`. |
+| **Sankey Diagram** | Utilized a **Custom Visual** for multi-dimensional path analysis of churn drivers (e.g., Contract $\rightarrow$ Payment Method). |
 
-**Key Highlights:**
-- **Churned Customers:** 1,869  
-- **Churned Revenue:** $3M  
-- **Total Revenue:** $16M  
-- **Average Tenure:** 32 months  
-- **Customer Churn Rate:** 27%  
-
-**Insights:**
-- Most churned customers are on **Month-to-Month** contracts, indicating higher volatility compared to long-term customers.  
-- Top churn reasons include poor service experience and competitor offers with better value or device quality.  
-- A **Sankey diagram** visualizes churn flow across multiple dimensions such as **Contract Type**, **Payment Method**, **Gender**, and **City**, revealing which customer profiles are most prone to churn.
 
 ![Churn Analysis Page](https://github.com/Telco-R3/Telco-BI/blob/96087a8ba33179105fbc861be173310046050f67/Customer-Churn-Analysis/Visuals/ChurnAnalysis_Page)
 
@@ -115,18 +145,11 @@ It focuses on identifying churn trends, revenue loss, and customer behavior.
 
 ### 👥 Customer Segmentation Page
 
-This page segments customers based on their overall value and behavior to support targeted retention and marketing strategies.
+| Focus Area | Technical Implementation & Challenges |
+| :--- | :--- |
+| **Segmentation Logic (DAX)** | **Customer segments** (High Value, Mid Value, Low Value) are classified using a **DAX Calculated Column** in `fact_subscriptions` based on thresholds applied to the CLTV metric. |
+| **Percentage Metrics** | Segmentation percentages (e.g., High Value Customers %) rely on the pattern `DIVIDE(COUNTROWS(FILTER(...)), [Total Customers])`. |
 
-**Key Highlights:**
-- **High-Value Customers:** 18%  
-- **Mid-Value Customers:** 28%  
-- **Low-Value Customers:** 54%  
-- **Highest Churn Rate:** Observed in the **Low-Value Segment (49%)**  
-- **Revenue Contribution:** The **High-Value Segment** contributes the largest share of total revenue despite being the smallest group.
-
-**Insights:**
-- Visual comparisons between **Customer Count** and **Total Revenue** reveal imbalances that highlight opportunities for customer retention.  
-- The **Churn Rate by Segment** chart identifies where to focus efforts to reduce attrition and increase profitability.  
 
 ![Customer Segmentation Page](https://github.com/Telco-R3/Telco-BI/blob/507da310821963bfd56f610181480f98737c8273/Customer-Churn-Analysis/Visuals/customer_segmentation_page)
 
@@ -134,38 +157,24 @@ This page segments customers based on their overall value and behavior to suppor
 
 ### ⚙️ Service Usage Page
 
-This page focuses on analyzing **service usage patterns** and their correlation with customer churn.  
-It presents key metrics such as:
-- **Overall Churn Rate:** 27%  
-- **Streaming Service Usage:** 75%  
-- **Internet Service Adoption:** 99%  
-- **Online Security Subscription:** 50%  
-- **Tech Support Utilization:** 50%  
+| Focus Area | Technical Implementation & Challenges |
+| :--- | :--- |
+| **Complex OR Logic (Streaming %)** | The measure **Streaming %** required using `VAR`, `DISTINCT`, and the **Logical OR (`||`)** operator within the filter function to account for both Streaming TV and Streaming Movies. |
+| **Service Adoption Measures** | Metrics like **Online Security %** are calculated by filtering the `dim_services` table (`COUNTROWS(FILTER(...))`) and dividing by the total number of services (or customers). |
 
-Detailed analysis shows that:
-- Customers **without online security or tech support** have significantly higher churn rates.  
-- **Fiber optic users** experience a higher churn rate (42%) compared to **DSL users** (19%).  
-- There’s a strong relationship between **service engagement** and **customer retention**, indicating that value-added services reduce churn risk.  
 
 ![Service Usage Page](https://github.com/Telco-R3/Telco-BI/blob/0778fc94e7361e08e3c9e9904a5971c5de84db6a/Customer-Churn-Analysis/Visuals/Service_Usage_Page.png)
 
+
 ---
 
-### 🌍 Customer Demographics Page 
+### 🌍 Customer Demographics Page
 
-This section explores the demographic composition of telecom customers to understand their characteristics and how these influence churn.
+| Focus Area | Technical Implementation & Challenges |
+| :--- | :--- |
+| **Demographic Percentage Metrics** | Key metrics like **Dependents %** and **Senior Citizen %** were calculated using the `DIVIDE(COUNTROWS(FILTER(...)), [Total Customers])` pattern. |
+| **Geospatial Visualization** | Required pre-processing in **Power Query** to ensure geographical data (e.g., City) was clean and compatible with the Power BI Map Visual. |
 
-**Key Metrics:**
-- **Total Customers:** 7,043  
-- **Average CLTV (Customer Lifetime Value):** $2,280  
-- **Dependents:** 23%  
-- **Customers with Partners:** 66%  
-- **Senior Citizens:** 16%  
-
-**Insights:**
-- Gender distribution is nearly balanced (3.6K male vs. 3.5K female).  
-- The majority of customers are **non-senior citizens** without dependents — suggesting a younger, more independent customer base.  
-- Customers with partners make up two-thirds of the population, representing strong potential for bundled plans or family offers.
 
 ![Customer Demographics Page](https://github.com/Telco-R3/Telco-BI/blob/7dadb7ab704c69d1950c41bdcb71265483b1563c/Customer-Churn-Analysis/Visuals/customer_demographics_page.png)
 
