@@ -7,8 +7,8 @@
 
 This project provides an in-depth analysis of **customer churn behavior** to identify the key drivers behind customer attrition and uncover actionable insights. The primary goal is to help the company **reduce the churn rate**, improve the customer experience, and increase revenue retention.
 
-The analysis is powered by a robust **Data Pipeline** engineered using the **Medallion Architecture**, resulting in a highly optimized Star Schema. The final insights are presented through an interactive and comprehensive **Power BI Dashboard** containing six dedicated analytical pages.
-Data was modeled into a Star Schema and visualized through an interactive Power BI Dashboard containing six analytical pages.
+The analysis is powered by a robust **Data Pipeline** engineered using the **Medallion Architecture**, resulting in a highly optimized Star Schema. The final insights are presented through an interactive and comprehensive **Power BI Dashboard** containing five dedicated analytical pages.
+Data was modeled into a Star Schema and visualized through an interactive Power BI Dashboard containing five analytical pages.
 
 ## Project Structure
 ```
