@@ -79,6 +79,74 @@ The project utilizes a dedicated Data Warehouse structured under the **Medallion
 | **Silver Layer** | **Cleaning and Standardization:** This critical layer performed data cleansing, standardization, and feature engineering (e.g., handling nulls, type conversion). | SQL/Power Query (ETL/ELT). |
 | **Gold Layer** | **Business-Ready Analysis:** The final, governed layer. Data is aggregated and structured into the **Star Schema** to support high-performance analytical queries in Power BI. | Star Schema Design (Fact and Dimension Tables). |
 
+---
+
+## 🛠️ Data Catalog for Gold Layer
+
+The Gold Layer is the business-level data representation, structured to support analytical and reporting use cases. The model uses a **Star Schema** with the following components (as seen in the Power BI Model View):
+
+
+### 1. `dim_customer` (Dimension Table)
+
+**Purpose:** Stores static customer demographics and contact information.
+
+| Column Name | Data Type (Power BI) | Description |
+| :--- | :--- | :--- |
+| `CustomerID` | Text | Unique identifier for the customer (Primary Key). |
+| `CustomerKey` | Whole Number | Surrogate Key for linking to fact tables. |
+| `Gender` | Text | The gender of the customer. |
+| `SeniorCitizen` | Text | Indicates if the customer is a senior citizen (`Yes`, `No`). |
+| `Partner` | Text | Indicates if the customer has a partner (`Yes`, `No`). |
+| `Dependents` | Text | Indicates if the customer has dependents (`Yes`, `No`). |
+| `City`, `State` | Text | Geographic location data for the customer. |
+
+
+### 2. `dim_services` (Dimension Table)
+
+**Purpose:** Provides a detailed breakdown of all core and value-added services subscribed to.
+
+| Column Name | Data Type (Power BI) | Description |
+| :--- | :--- | :--- |
+| `ServiceKey` | Whole Number | Surrogate Key for linking to fact tables. |
+| `DeviceProtection` | Text | Indicates Device Protection subscription status. |
+| `InternetService` | Text | The type of internet service subscribed (`DSL`, `Fiber optic`, `No`). |
+| `MultipleLines` | Text | Indicates if the customer has multiple phone lines. |
+| `OnlineBackup`, `OnlineSecurity` | Text | Indicates subscription status for security services. |
+| `PhoneService` | Text | Indicates if the customer has phone service. |
+| `StreamingMovies`, `StreamingTV` | Text | Indicates subscription status for streaming services. |
+| `TechSupport` | Text | Indicates subscription to Technical Support. |
+
+### 3. `dim_contract`, `dim_payment`, `dim_churn` (Supporting Dimensions)
+
+**Purpose:** These tables provide key attributes for filtering and segmenting the main facts.
+
+| Table Name | Key Columns | Description |
+| :--- | :--- | :--- |
+| `dim_contract` | `ContractKey`, `ContractType` | Details about the duration and type of customer's contract. |
+| `dim_payment` | `PaymentMethodKey`, `PaymentMethod` | Details the customer's payment channel. |
+| `dim_churn` | `ChurnReasonKey`, `ChurnReason` | Categorizes the specific reason a customer decided to churn (if applicable). |
+
+### 4. `fact_subscriptions` (Fact Table)
+
+**Purpose:** Stores transactional metrics, customer behavior over time, and core churn metrics.
+
+| Column Name | Data Type (Power BI) | Description |
+| :--- | :--- | :--- |
+| `FactKey` | Whole Number | Primary Key for the fact table. |
+| `CustomerID` | Text | Links to `dim_customer`. |
+| `ContractKey`, `PaymentMethodKey`, `ServiceKey` | Whole Number | Foreign Keys linking to respective dimension tables. |
+| `TenureMonths` | Whole Number | The total number of months the customer has been with the company. |
+| **`MonthlyCharges`** | Decimal Number | The total amount charged to the customer monthly. |
+| **`TotalCharges`** | Decimal Number | The total amount charged to the customer over the entire tenure. |
+| **`ChurnFlag`** | Text | The core Churn Metric: `Yes` (Churned) or `No` (Active/Retained). |
+| **`CLTV`** | Decimal Number | Calculated Customer Lifetime Value (Calculated Column based on the CLTV measure). |
+| **`ChurnScore`** | Decimal Number | Predictive score indicating the likelihood of churn. |
+| **`Customer_Segment`** | Text | Derived segment (e.g., High Value, Low Value) based on CLTV and other factors. |
+
+---
+
+
+
 ### Gold Layer Output: Star Schema Components
 
 The final data model is built on the following key Fact and Dimension tables, created in the **Gold Layer**, with established **One-to-Many** relationships (as shown in the data model schema):
