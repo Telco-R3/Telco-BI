@@ -33,9 +33,11 @@ Customer-Churn-Analysis/
 │   ├── Telco_Churn_Dashboard.pbix         # Power BI dashboard files
 │   ├── DAX & Questions.pdf                # DAX measures and analytical questions
 │   ├── Business Scenario.pdf              # Business understanding and objectives
+│   ├── Business Scenario.pdf              # Business understanding and objectives
+│   └── recommendations.ppt                # Presentation for strategic recommendations
 │
 ├── Presentation/
-│   ├── Final project presentation.pdf     # Final presentation slides reports
+│   └── Final project presentation.pdf     # Final presentation slides reports
 │
 ├── visuals/
 │   ├── churn_analysis_page.png
@@ -45,7 +47,7 @@ Customer-Churn-Analysis/
 │   ├── overview_page.png 
 │   ├── service_usage_page.png
 |   ├── bg/
-│   ├── icons/
+│   └── icons/
 │
 └── README.md
 ```
