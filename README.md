@@ -196,7 +196,7 @@ The **Home Page** serves as the dashboard's main entry point and sets the visual
 | **Time Series Prep** | **Tenure Bucketing:** Implemented a Calculated Column or M-Query step to categorize `TenureMonths` for structured time-based analysis. |
 
 
-![Overview Page](https://github.com/Telco-R3/Telco-BI/blob/0778fc94e7361e08e3c9e9904a5971c5de84db6a/Customer-Churn-Analysis/Visuals/overview_page.png)
+![Overview Page](https://github.com/Telco-R3/Telco-BI/blob/1fa51c885f7fb096fb8642e14cd34f9d5f27ac92/Customer-Churn-Analysis/Visuals/overview.png)
 
 ---
 
@@ -209,7 +209,7 @@ The **Home Page** serves as the dashboard's main entry point and sets the visual
 | **Sankey Diagram** | Utilized a **Custom Visual** for multi-dimensional path analysis of churn drivers (e.g., Contract $\rightarrow$ Payment Method). |
 
 
-![Churn Analysis Page](https://github.com/Telco-R3/Telco-BI/blob/96087a8ba33179105fbc861be173310046050f67/Customer-Churn-Analysis/Visuals/ChurnAnalysis_Page)
+![Churn Analysis Page](https://github.com/Telco-R3/Telco-BI/blob/d6dd69bda23a6ed4d4694ea6c17ee526dd683cc1/Customer-Churn-Analysis/Visuals/Churn%20Analysis%20page.png)
 
 ---
 
@@ -221,7 +221,7 @@ The **Home Page** serves as the dashboard's main entry point and sets the visual
 | **Percentage Metrics** | Segmentation percentages (e.g., High Value Customers %) rely on the pattern `DIVIDE(COUNTROWS(FILTER(...)), [Total Customers])`. |
 
 
-![Customer Segmentation Page](https://github.com/Telco-R3/Telco-BI/blob/507da310821963bfd56f610181480f98737c8273/Customer-Churn-Analysis/Visuals/customer_segmentation_page)
+![Customer Segmentation Page](https://github.com/Telco-R3/Telco-BI/blob/d6dd69bda23a6ed4d4694ea6c17ee526dd683cc1/Customer-Churn-Analysis/Visuals/Customer%20Segmentation%20page.png)
 
 ---
 
@@ -233,7 +233,7 @@ The **Home Page** serves as the dashboard's main entry point and sets the visual
 | **Service Adoption Measures** | Metrics like **Online Security %** are calculated by filtering the `dim_services` table (`COUNTROWS(FILTER(...))`) and dividing by the total number of services (or customers). |
 
 
-![Service Usage Page](https://github.com/Telco-R3/Telco-BI/blob/0778fc94e7361e08e3c9e9904a5971c5de84db6a/Customer-Churn-Analysis/Visuals/Service_Usage_Page.png)
+![Service Usage Page](https://github.com/Telco-R3/Telco-BI/blob/d6dd69bda23a6ed4d4694ea6c17ee526dd683cc1/Customer-Churn-Analysis/Visuals/Service%20Usage%20page.png)
 
 
 ---
@@ -246,7 +246,7 @@ The **Home Page** serves as the dashboard's main entry point and sets the visual
 | **Geospatial Visualization** | Required pre-processing in **Power Query** to ensure geographical data (e.g., City) was clean and compatible with the Power BI Map Visual. |
 
 
-![Customer Demographics Page](https://github.com/Telco-R3/Telco-BI/blob/7dadb7ab704c69d1950c41bdcb71265483b1563c/Customer-Churn-Analysis/Visuals/customer_demographics_page.png)
+![Customer Demographics Page](https://github.com/Telco-R3/Telco-BI/blob/d6dd69bda23a6ed4d4694ea6c17ee526dd683cc1/Customer-Churn-Analysis/Visuals/Customer%20Demographics%20page.png)
 
 ---
 
