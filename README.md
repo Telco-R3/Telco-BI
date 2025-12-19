@@ -38,6 +38,7 @@ Customer-Churn-Analysis/
 │
 ├── Presentation/
 │   └── Final project presentation.pdf     # Final presentation slides reports
+|   └──  Final project presentation.pptx
 │
 ├── visuals/
 │   ├── churn_analysis_page.png
