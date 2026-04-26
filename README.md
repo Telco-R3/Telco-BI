@@ -71,6 +71,14 @@ The project follows the **Medallion Architecture** — a layered data design pat
 
 ---
 
+​🏆 Award & Recognition
+​I am honored to announce that this project was awarded First Place in the DEPI organized by the Ministry of Communications and Information Technology (MCIT), Egypt. The project was recognized for its technical excellence, data accuracy, and innovative approach to business intelligence.
+<p align="center">
+  <img src="images/certificate_image.png" alt="MCIT First Place Certificate" width="600">
+</p>
+
+
+
 ## 📊 Data Architecture and Data Model Deep Dive
 
 The project utilizes a dedicated Data Warehouse structured under the **Medallion Architecture** (Bronze, Silver, Gold layers) to ensure data quality, reliability, and governance throughout the entire analysis pipeline.
